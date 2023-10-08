@@ -31,18 +31,6 @@
             
         </label>
 
-
-        <!-- INPUT PROVINCIA -->
-        <label class=" col py-1" for="provincia">
-            
-                <span class="ml-auto">
-                    Provincia:
-                </span>
-                <select class="ml-1 mr-auto form-control" paceholder="provincia" name="impuesto" id="impuesto">
-                    <option value="10">impuesto 1 (impuesto 10%)</option>
-                    <option value="20">impuesto 2 (impuesto 20%)</option>
-                    <option value="30">impuesto 3 (impuesto 30%)</option>
-                </select>
             
             </label>
     </div>
@@ -72,7 +60,7 @@
     </form>
 </div>
 <br>
-<h2>TP Integrador de Joel Kukin</h2>
+
     <!-- JAVASCRIPT -->
     <script>
     function agregProduct(){

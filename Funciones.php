@@ -52,9 +52,9 @@
             $descripcion = filter_var($_POST["descripcion"][$n],FILTER_SANITIZE_STRING);
             $cantidad = filter_var($_POST["cantidad"][$n],FILTER_SANITIZE_NUMBER_INT);
             $precio = filter_var($_POST["precio"][$n],FILTER_SANITIZE_NUMBER_INT);
-            $impuesto = filter_var($_POST['impuesto'],FILTER_SANITIZE_NUMBER_INT)/100+1;
+            
 
-            $subtotal[$n]= $precio*$cantidad*$impuesto;
+            $subtotal[$n]= $precio*$cantidad;
             
             /* CREAR FILAS DINÁMICAS */
             $filas[$n] = 

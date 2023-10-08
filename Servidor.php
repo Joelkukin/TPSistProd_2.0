@@ -24,13 +24,11 @@
         $cantFilas=  filter_var($_POST['cantFilas'],FILTER_SANITIZE_NUMBER_INT);
         $fecha= filter_var($_POST['fecha'],FILTER_SANITIZE_STRING);
         $nombre= filter_var($_POST['nombre'],FILTER_SANITIZE_STRING);
-        $impuesto=  filter_var(intVal($_POST['impuesto']),FILTER_SANITIZE_NUMBER_INT);
         
         print '
             <div class="row p-0">
                 <p class=" col py-1"><b>Fecha: </b>'.$fecha.'</p>
                 <p class=" col py-1"><b>Nombre: </b>'.$nombre.'</p>
-                <p class=" col py-1"><b>Impuesto: </b>'.$impuesto.'%</p>
             </div>
             <table id="tablaResults">
 
@@ -40,8 +38,8 @@
             </table>'?>
 
     </div>
-    <br>s
-    <h2>TP Integrador de Joel Kukin</h2>
+    <br>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
