@@ -1,24 +1,25 @@
-
 <?php
-    /* CONSTRUCTOR TABLA DE ENTRADA DE DATOS */
-    function tablaIn($c){
+    include_once 'config.php';
+
+    /* TABLA DE ENTRADA DE DATOS */
+    function tablaIn($cantFilas){
         $tabla=[];
-        for ($n=0; $n < $c; $n++) { 
+        for ($fila=0; $fila < $cantFilas; $fila++) { 
         
             /* FILAS */    
-            $tabla[$n] = '
-                <tr class="border border-top-0" id="row-'.$n.'">
+            $tabla[$fila] = '
+                <tr class="border border-top-0" id="row-'.$fila.'">
                     <td class="p-0">
-                        <input class="form-control rounded-0 d-flex w-100" type="number" name="codigo[]" id="codigo-'.($n).'">
+                        <input class="form-control rounded-0 d-flex w-100" type="number" name="codigo[]" id="codigo-'.($fila).'">
                         </td>
                     <td class="p-0">
-                        <input class="form-control rounded-0 d-flex w-100" type="text" name="descripcion[]" id="descripcion-'.($n).'">
+                        <input class="form-control rounded-0 d-flex w-100" type="text" name="descripcion[]" id="descripcion-'.($fila).'">
                         </td>
                     <td class="p-0">
-                        <input class="form-control rounded-0 d-flex w-100" type="number" name="cantidad[]" id="cantidad-'.($n).'">
+                        <input class="form-control rounded-0 d-flex w-100" type="number" name="cantidad[]" id="cantidad-'.($fila).'">
                         </td>
                     <td class="p-0">
-                        <input class="form-control rounded-0 d-flex w-100" type="number" name="precio[]" id="precio-'.($n).'">
+                        <input class="form-control rounded-0 d-flex w-100" type="number" name="precio[]" id="precio-'.($fila).'">
                     </td>
                 </tr>';
 
@@ -35,29 +36,29 @@
                 <th scope="col"> Precio Unit. </th>
             </tr>
         </thead>
-        <tbody id="tabla" cantFilas= '.$n.'>
+        <tbody id="tabla" cantFilas= '.$fila.'>
             '.implode($tabla).'
         </tbody>
         </table>';
     };
 
     /* CONSTRUCTOR TABLA DE SALIDA DE DATOS */
-    function tablaOut($f){
+    function tablaOut($cantFilas){
         $filas=[];
-        for ($n=0; $n < $f; $n++) { 
+        for ($fila=0; $fila < $cantFilas; $fila++) { 
             /* VALIDACIÓN DE SEGURIDAD 
             Guiado por: https://www.baulphp.com/prevenir-la-inyeccion-sql-en-php-ejemplo-completo/
              */
-            $codigo = filter_var($_POST["codigo"][$n],FILTER_SANITIZE_NUMBER_INT);
-            $descripcion = filter_var($_POST["descripcion"][$n],FILTER_SANITIZE_STRING);
-            $cantidad = filter_var($_POST["cantidad"][$n],FILTER_SANITIZE_NUMBER_INT);
-            $precio = filter_var($_POST["precio"][$n],FILTER_SANITIZE_NUMBER_INT);
+            $codigo = filter_var($_POST["codigo"][$fila],FILTER_SANITIZE_NUMBER_INT);
+            $descripcion = filter_var($_POST["descripcion"][$fila],FILTER_SANITIZE_STRING);
+            $cantidad = filter_var($_POST["cantidad"][$fila],FILTER_SANITIZE_NUMBER_INT);
+            $precio = filter_var($_POST["precio"][$fila],FILTER_SANITIZE_NUMBER_INT);
             
 
-            $subtotal[$n]= $precio*$cantidad;
+            $subtotal[$fila]= $precio*$cantidad;
             
             /* CREAR FILAS DINÁMICAS */
-            $filas[$n] = 
+            $filas[$fila] = 
                 '<tr>
                     <td>
                         '.$codigo.'
@@ -69,7 +70,7 @@
                         '.$cantidad.'
                         </td>
                     <td>
-                        '. $subtotal[$n] .'
+                        '. $subtotal[$fila] .'
                         </td>
                 </tr>';
 
@@ -94,7 +95,7 @@
                     </th>
                 </tr>
             </thead>
-            <tbody id="tabla" cantFilas= '.$n.'>
+            <tbody id="tabla" cantFilas= '.$fila.'>
                 '.implode($filas).'
                 <tr class="bg-secondary">
                     
@@ -108,4 +109,8 @@
             </tbody>
         </table>';
     };
+
+    function guardarEnBD (){
+        
+    }
 ?>
