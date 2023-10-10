@@ -1,5 +1,4 @@
-
-<?php require_once 'marcoHtml.php'; echo $headerHtml?>
+<?php require_once '../modules/marcoHtml.php'; echo $headerHtml?>
     
     <br>
     <h1>Carrito de compras</h1>
@@ -8,7 +7,7 @@
     <div class="container px-auto bg-dark text-white border border-dark p-3 rounded-lg">
         <?PHP 
         /* llamar funciones */
-        require 'Components.php';
+        require '../modules/Components.php';
 
         /* IMPORTAR DATOS VALIDANDO SECURITY*/
         $cantFilas=  filter_var($_POST['cantFilas'],FILTER_SANITIZE_NUMBER_INT);

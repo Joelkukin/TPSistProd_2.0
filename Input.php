@@ -6,7 +6,7 @@
 <br>
 <div class="container px-auto bg-dark text-white border border-dark p-3 rounded-lg">
 
-    <form action="Output.php" method="post" name="formulario" class="mx-auto w-100">
+    <form action="pages/Output.php" method="post" name="formulario" class="mx-auto w-100">
     <div class="row p-0">
         <!-- INPUT NOMBRE -->
         <label class=" col py-1" for="nombre">
